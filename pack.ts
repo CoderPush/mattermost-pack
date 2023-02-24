@@ -98,7 +98,7 @@ const UserSchema = coda.makeObjectSchema({
   type: coda.ValueType.Object,
   idProperty: "id",
   displayProperty: "username",
-  featuredProperties: ["username", "email", "first_name", "last_name", "nickname", "position"],
+  featuredProperties: ["id", "username", "email", "first_name", "last_name", "nickname", "position"],
   properties: {
     id: {
       type: coda.ValueType.String,
@@ -212,7 +212,7 @@ const ChannelSchema = coda.makeObjectSchema({
   type: coda.ValueType.Object,
   idProperty: "id",
   displayProperty: "display_name",
-  featuredProperties: ["display_name", "name", "header", "purpose"],
+  featuredProperties: ["id", "display_name", "name", "header", "purpose", "total_msg_count"],
   properties: {
     id: {
       type: coda.ValueType.String,
@@ -343,7 +343,7 @@ const TeamSchema = coda.makeObjectSchema({
   type: coda.ValueType.Object,
   idProperty: "id",
   displayProperty: "display_name",
-  featuredProperties: ["display_name", "name", "description", "email"],
+  featuredProperties: ["id", "display_name", "name", "description", "email"],
   properties: {
     id: {
       type: coda.ValueType.String,
