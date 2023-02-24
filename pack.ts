@@ -322,3 +322,123 @@ pack.addSyncTable({
   },
 });
 
+
+// Define a TeamSchema from coda.makeObjectSchema which uses the follow structure:
+//   {
+//   "id": "string",
+//   "create_at": 0,
+//   "update_at": 0,
+//   "delete_at": 0,
+//   "display_name": "string",
+//   "name": "string",
+//   "description": "string",
+//   "email": "string",
+//   "type": "string",
+//   "allowed_domains": "string",
+//   "invite_id": "string",
+//   "allow_open_invite": true,
+//   "policy_id": "string"
+//   }
+const TeamSchema = coda.makeObjectSchema({
+  type: coda.ValueType.Object,
+  idProperty: "id",
+  displayProperty: "display_name",
+  featuredProperties: ["display_name", "name", "description", "email"],
+  properties: {
+    id: {
+      type: coda.ValueType.String,
+      description: "Team ID",
+    },
+    create_at: {
+      type: coda.ValueType.Number,
+      description: "Create at",
+    },
+    update_at: {
+      type: coda.ValueType.Number,
+      description: "Update at",
+    },
+    delete_at: {
+      type: coda.ValueType.Number,
+      description: "Delete at",
+    },
+    display_name: {
+      type: coda.ValueType.String,
+      description: "Display name",
+    },
+    name: {
+      type: coda.ValueType.String,
+      description: "Name",
+    },
+    description: {
+      type: coda.ValueType.String,
+      description: "Description",
+    },
+    email: {
+      type: coda.ValueType.String,
+      description: "Email",
+    },
+    type: {
+      type: coda.ValueType.String,
+      description: "Type",
+    },
+    allowed_domains: {
+      type: coda.ValueType.String,
+      description: "Allowed domains",
+    },
+    invite_id: {
+      type: coda.ValueType.String,
+      description: "Invite ID",
+    },
+    allow_open_invite: {
+      type: coda.ValueType.Boolean,
+      description: "Allow open invite",
+    },
+    policy_id: {
+      type: coda.ValueType.String,
+      description: "Policy ID",
+    },
+  },
+});
+
+// Similar to the above sync table named Users, build a sync table named Teams
+// that lists all teams in a Mattermost instance.
+// It should take per_page and page as optional parameters.
+pack.addSyncTable({
+  name: "Teams",
+  schema: TeamSchema,
+  identityName: "Team",
+  formula: {
+    name: "SyncTeams",
+    description: "List all teams in a Mattermost instance.",
+    parameters: [
+      coda.makeParameter({
+        type: coda.ParameterType.String,
+        description: "the page number to list teams from",
+        name: "page",
+        optional: true,
+      }),
+      coda.makeParameter({
+        type: coda.ParameterType.String,
+        name: "per_page",
+        description: "the number of teams per page",
+        optional: true,
+      })
+    ],
+    execute: async function ([page, per_page], context) {
+      // complete the formula here
+      const { fetcher } = context;
+      const response = await fetcher.fetch({
+        url: `${MATTERMOST_BASE_URL}/api/v4/teams?page=${page}&per_page=${per_page}`,
+        method: "GET"
+      });
+
+      let results = [];
+      for (let team of response.body) {
+        results.push(team)
+      }
+      return {
+        result: results
+      }
+    },
+  },
+});
