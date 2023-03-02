@@ -62,7 +62,7 @@ pack.addFormula({
       type: coda.ParameterType.String,
       description: "the channel ID to get details for",
       name: "channel_id",
-      optional: false,
+      optional: false
     }),
   ],
   execute: async function ([channel_id], context) {
@@ -73,7 +73,8 @@ pack.addFormula({
     });
     return response.body;
   },
-  resultType: coda.ValueType.String,
+  resultType: coda.ValueType.Object,
+  schema: undefined
 });
 
 
