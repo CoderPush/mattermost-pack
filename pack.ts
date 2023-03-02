@@ -443,3 +443,157 @@ pack.addSyncTable({
     },
   },
 });
+
+
+// make a PostSchema from the following object, using makeObjectSchema
+// {
+//  "id": "string",
+//  "create_at": 0,
+//  "update_at": 0,
+//  "delete_at": 0,
+//  "edit_at": 0,
+//  "user_id": "string",
+//  "channel_id": "string",
+//  "root_id": "string",
+//  "original_id": "string",
+//  "message": "string",
+//  "type": "string",
+//  "props": { },
+//  "hashtag": "string",
+//  "file_ids": [
+//  "string"
+//  ],
+//  "pending_post_id": "string",
+//  "metadata": {
+//  "embeds": [],
+//  "emojis": [],
+//  "files": [],
+//  "images": { },
+//  "reactions": []
+// }
+// }
+const PostSchema = coda.makeObjectSchema({
+  type: coda.ValueType.Object,
+  idProperty: "id",
+  displayProperty: "message",
+  properties: {
+    id: { type: coda.ValueType.String },
+    create_at: { type: coda.ValueType.Number },
+    update_at: { type: coda.ValueType.Number },
+    delete_at: { type: coda.ValueType.Number },
+    edit_at: { type: coda.ValueType.Number },
+    user_id: { type: coda.ValueType.String },
+    channel_id: { type: coda.ValueType.String },
+    root_id: { type: coda.ValueType.String },
+    original_id: { type: coda.ValueType.String },
+    message: { type: coda.ValueType.String },
+    type: { type: coda.ValueType.String },
+    hashtag: { type: coda.ValueType.String },
+    file_ids: { type: coda.ValueType.Array, items: { type: coda.ValueType.String } },
+    pending_post_id: { type: coda.ValueType.String },
+  },
+});
+
+
+// similar to Channels sync table above, build a sync table for Posts
+// but channel_id is the required parameter.
+// use the PostSchema defined above
+pack.addSyncTable({
+  name: "Posts",
+  schema: PostSchema,
+  identityName: "Post",
+  formula: {
+    name: "SyncPosts",
+    description: "List all posts in a Mattermost instance.",
+    parameters: [
+      coda.makeParameter({
+        type: coda.ParameterType.String,
+        name: "channel_id",
+        description: "the channel_id to list posts from",
+        optional: false,
+      }),
+      coda.makeParameter({
+        type: coda.ParameterType.String,
+        description: "the page number to list posts from",
+        name: "page",
+        optional: true,
+      }),
+      coda.makeParameter({
+        type: coda.ParameterType.String,
+        name: "per_page",
+        description: "the number of posts per page",
+        optional: true,
+      }),
+    ],
+    execute: async function ([channel_id, page, per_page], context) {
+      // complete the formula here
+      const { fetcher } = context;
+      const response = await fetcher.fetch({
+        url: `${MATTERMOST_BASE_URL}/api/v4/channels/${channel_id}/posts?page=${page}&per_page=${per_page}`,
+        method: "GET"
+      });
+
+      console.log("response body: ", response.body)
+
+      console.log("posts: ", response.body.posts)
+      const posts = response.body.posts
+      // posts is an object with post id as key and post object as value
+      // convert this to an array of post objects
+      const postsArray = Object.values(posts)
+
+      // return postsArray
+      return {
+        result: postsArray
+      }
+    },
+  },
+});
+
+// add sync table ChannelUsers that lists all users in a channel
+// channel_id is the required parameter
+// use the UserSchema defined above
+pack.addSyncTable({
+  name: "ChannelUsers",
+  schema: UserSchema,
+  identityName: "User",
+  formula: {
+    name: "SyncChannelUsers",
+    description: "List all users in a Mattermost channel.",
+    parameters: [
+      coda.makeParameter({
+        type: coda.ParameterType.String,
+        name: "channel_id",
+        description: "the channel_id to list users from",
+        optional: false,
+      }),
+      coda.makeParameter({
+        type: coda.ParameterType.String,
+        description: "the page number to list users from",
+        name: "page",
+        optional: true,
+      }),
+      coda.makeParameter({
+        type: coda.ParameterType.String,
+        name: "per_page",
+        description: "the number of users per page",
+        optional: true,
+      }),
+    ],
+    execute: async function ([channel_id, page, per_page], context) {
+      // complete the formula here
+      const { fetcher } = context;
+      const response = await fetcher.fetch({
+        url: `${MATTERMOST_BASE_URL}/api/v4/channels/${channel_id}/members?page=${page}&per_page=${per_page}`,
+        method: "GET"
+      });
+
+      let results = [];
+      for (let user of response.body) {
+        results.push(user)
+      }
+      return {
+        result: results
+      }
+    },
+  },
+});
