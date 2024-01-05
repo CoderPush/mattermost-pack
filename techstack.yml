@@ -1,7 +1,8 @@
 repo_name: CoderPush/mattermost-pack
 report_id: ed7481bc1b456575779f15960e7a721c
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-10T08:10:52+00:00'
+timestamp: '2024-01-05T08:57:31+00:00'
 requested_by: harley
 provider: github
 branch: main
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -28,6 +30,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/989/ruby.png
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -40,6 +43,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source_url: https://github.com/CoderPush/mattermost-pack
   detection_source: Repo Metadata
 - name: Node.js
   description: A platform built on Chrome's JavaScript runtime for easily building
@@ -50,6 +54,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -63,7 +68,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Javascript Testing Framework
   image_url: https://img.stackshare.io/service/1725/chai.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -76,6 +81,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -87,6 +93,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/CoderPush/mattermost-pack
   detection_source: Repo Metadata
 - name: Mocha
   description: Simple, flexible, fun javascript test framework for node.js &amp; the
@@ -99,7 +106,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Javascript Testing Framework
   image_url: https://img.stackshare.io/service/832/mocha.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -111,6 +118,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Package Managers
   image_url: https://img.stackshare.io/service/12795/5jL6-BA5_400x400.jpeg
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -123,7 +131,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Javascript Testing Framework
   image_url: https://img.stackshare.io/service/3509/logo.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -135,6 +143,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -148,7 +157,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15922/default_e0a4fb1126d7400f419f0931cf1669947a5bc552.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -162,7 +171,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16527/default_2e7c1d6d94467a56325f7c984571015e8713a450.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -176,7 +185,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/18347/default_c95ee102b7b5fa4c25295d4f54cfcb2f3bdf55bc.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -190,7 +199,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15893/default_1d65e37e65b7f80761374f0202776043277d505d.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -204,7 +213,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15809/default_5e5e8ac63beda29f31f1844df64d4b8247570a66.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -218,7 +227,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16151/default_ac04a744873b460c4ef30a7450ed0c83223640ab.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -232,7 +241,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15982/default_8b5680d4e916298d08363c291a0d6e34c07ceb15.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -246,7 +255,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15980/default_732016a20524708efe7a4c77497fe9bfeea19ba6.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: ghun131
   last_updated_on: 2023-02-24 07:24:20.000000000 Z
@@ -260,7 +269,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15970/default_cbd6c289400672b291755183817e9dd6abe1a612.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
@@ -274,7 +283,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16954/default_c17ccfb3dc0510bb2c684b87ee080a74a9728c34.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-22 16:49:30.000000000 Z
@@ -288,7 +297,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15830/default_6743ba96cf149a3c3c68a185199f9705d6eff80e.png
-  detection_source_url: package-lock.json
+  detection_source_url: https://github.com/CoderPush/mattermost-pack/blob/main/package-lock.json
   detection_source: package.json
   last_updated_by: Harley Trung
   last_updated_on: 2023-02-20 13:17:51.000000000 Z
